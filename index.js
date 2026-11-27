@@ -1,0 +1,21 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// Railway akan menyuntikkan variabel ini nanti
+const MONGO_URI = process.env.MONGO_URI; 
+
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('✅ MongoDB Terhubung'))
+  .catch(err => console.error('❌ Gagal:', err.message));
+
+app.get('/', (req, res) => res.json({ status: 'OK', pesan: 'DisPost Backend aktif 🚀' }));
+
+// ... (route /api/users dan /api/schedules Anda bisa salin dari sebelumnya) ...
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => console.log(`🚀 Server di port ${PORT}`));
