@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // Railway akan menyuntikkan variabel ini nanti
-const MONGO_URI = process.env.MONGO_URI; 
+const MONGO_URI = 'mongodb+srv://Deniskw900:Singkawang12@cluster0.j5rbc2z.mongodb.net/'; 
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log('✅ MongoDB Terhubung'))
