@@ -623,4 +623,288 @@
     <div class="section-head">
       <div class="section-tag">Dashboard</div>
       <h2 class="section-title">Pantau semua jadwal dalam satu layar</h2>
-      <p class="section-desc">Status real-time, riwayat, dan kontrol setiap konfigurasi
+      <p class="section-desc">Status real-time, riwayat, dan kontrol setiap konfigurasi.</p>
+    </div>
+
+    <div class="preview-wrap">
+      <div class="preview">
+        <div class="preview-bar">
+          <span class="d d1"></span><span class="d d2"></span><span class="d d3"></span>
+          <span class="url">dispost.my.id/dashboard</span>
+        </div>
+        <div class="dash">
+          <aside class="dash-side">
+            <div class="dash-side-item active">▦ Overview</div>
+            <div class="dash-side-item">⚙ Schedules</div>
+            <div class="dash-side-item">🧾 Delivery logs</div>
+            <div class="dash-side-item">🔑 Accounts</div>
+            <div class="dash-side-item">💳 Billing</div>
+          </aside>
+          <main class="dash-main">
+            <div class="dash-head">
+              <h4>Jadwal aktif</h4>
+              <span class="dash-badge">● 3 berjalan</span>
+            </div>
+            <table class="dash-table">
+              <thead>
+                <tr><th>Channel</th><th>Interval</th><th>Berikutnya</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#pengumuman</td>
+                  <td>Setiap 30 menit</td>
+                  <td>14:30</td>
+                  <td><span class="tag tag-ok">Aktif</span></td>
+                </tr>
+                <tr>
+                  <td>#promo-harian</td>
+                  <td>Setiap 2 jam</td>
+                  <td>16:00</td>
+                  <td><span class="tag tag-ok">Aktif</span></td>
+                </tr>
+                <tr>
+                  <td>#event-reminder</td>
+                  <td>Sekali · 20:00</td>
+                  <td>—</td>
+                  <td><span class="tag tag-wait">Menunggu</span></td>
+                </tr>
+                <tr>
+                  <td>#test-channel</td>
+                  <td>Setiap 1 jam</td>
+                  <td>—</td>
+                  <td><span class="tag tag-pause">Dijeda</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-tag">Harga</div>
+      <h2 class="section-title">Harga sederhana, tanpa biaya tersembunyi</h2>
+      <p class="section-desc">Mulai gratis 2 hari. Tingkatkan kapan saja dengan pembayaran QRIS.</p>
+    </div>
+
+    <div class="pricing">
+      <div class="price-card">
+        <div class="price-name">Basic</div>
+        <div class="price-sub">Untuk kebutuhan personal</div>
+        <div class="price-amount">Rp16.000</div>
+        <div class="price-period">per 30 hari</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> Hingga 20 akun</li>
+          <li><span class="check">✓</span> Multi-channel schedules</li>
+          <li><span class="check">✓</span> Riwayat pengiriman 30 hari</li>
+          <li><span class="check">✓</span> Backoff otomatis</li>
+        </ul>
+        <button class="btn btn-ghost" onclick="openModal('signup')">Pilih Basic</button>
+      </div>
+
+      <div class="price-card popular">
+        <span class="price-badge">POPULER</span>
+        <div class="price-name">Pro</div>
+        <div class="price-sub">Untuk tim &amp; komunitas</div>
+        <div class="price-amount">Rp25.000</div>
+        <div class="price-period">per 30 hari</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> Hingga 100 akun</li>
+          <li><span class="check">✓</span> Semua fitur Basic</li>
+          <li><span class="check">✓</span> Riwayat pengiriman 180 hari</li>
+          <li><span class="check">✓</span> Prioritas dukungan</li>
+          <li><span class="check">✓</span> Akses awal WhatsApp &amp; X</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openModal('signup')">Pilih Pro</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" style="padding-top: 20px;">
+  <div class="section-inner" style="max-width: 780px;">
+    <div class="section-head">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Pertanyaan yang sering diajukan</h2>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <details class="feature" style="padding: 20px 24px; cursor:pointer;">
+        <summary style="font-weight:600; list-style:none;">Apakah DisPost menyimpan token Discord saya?</summary>
+        <p style="margin-top:12px;">Ya, tetapi selalu dalam bentuk terenkripsi AES-256. Kami tidak pernah menyimpan token dalam bentuk plaintext dan tidak membagikannya ke pihak ketiga.</p>
+      </details>
+      <details class="feature" style="padding: 20px 24px; cursor:pointer;">
+        <summary style="font-weight:600; list-style:none;">Bagaimana jika Discord mengembalikan rate-limit?</summary>
+        <p style="margin-top:12px;">Sistem akan membaca header Retry-After, menjeda jadwal sementara, lalu mencoba lagi otomatis setelah periode backoff selesai.</p>
+      </details>
+      <details class="feature" style="padding: 20px 24px; cursor:pointer;">
+        <summary style="font-weight:600; list-style:none;">Apakah trial benar-benar gratis?</summary>
+        <p style="margin-top:12px;">Ya. Trial 2 hari gratis tanpa kartu kredit, dengan 1 akun dan 1 konfigurasi untuk menguji fitur.</p>
+      </details>
+      <details class="feature" style="padding: 20px 24px; cursor:pointer;">
+        <summary style="font-weight:600; list-style:none;">Kapan WhatsApp dan X tersedia?</summary>
+        <p style="margin-top:12px;">Keduanya sedang dalam tahap pengembangan. Pengguna Pro akan mendapatkan akses awal saat dirilis.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <a href="#" class="logo">
+        <div class="logo-mark">✦</div>
+        <span class="logo-text">DisPost</span>
+      </a>
+      <p>Jadwalkan publikasi pesan otomatis untuk channel yang Anda kelola. Kontrol penuh, riwayat lengkap.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Produk</h5>
+      <a href="#features">Fitur</a>
+      <a href="#pricing">Harga</a>
+      <a href="#preview">Dashboard</a>
+    </div>
+    <div class="foot-col">
+      <h5>Bantuan</h5>
+      <a href="#faq">FAQ</a>
+      <a href="#" onclick="showToast('Halaman dokumentasi segera hadir');return false;">Dokumentasi</a>
+      <a href="#" onclick="showToast('Hubungi: support@dispost.my.id');return false;">Dukungan</a>
+    </div>
+    <div class="foot-col">
+      <h5>Legal</h5>
+      <a href="#" onclick="showToast('Halaman ini segera hadir');return false;">Kebijakan privasi</a>
+      <a href="#" onclick="showToast('Halaman ini segera hadir');return false;">Syarat layanan</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2025 DisPost. Semua hak dilindungi.</span>
+    <span>Dibuat dengan ❤ untuk komunitas Discord</span>
+  </div>
+</footer>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h3 id="modal-title">Buat akun</h3>
+    <p class="sub" id="modal-sub">Mulai trial 2 hari gratis.</p>
+    <form onsubmit="handleSubmit(event)">
+      <div class="field" id="name-field" style="display:none;">
+        <label>Nama</label>
+        <input type="text" placeholder="Nama Anda" />
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" placeholder="anda@email.com" required />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" placeholder="Min. 8 karakter" required minlength="8" />
+      </div>
+      <button type="submit" class="btn btn-primary" id="modal-cta">Buat akun gratis</button>
+    </form>
+    <p class="switch-mode" id="modal-switch">
+      Sudah punya akun? <a href="#" onclick="openModal('login');return false;">Masuk</a>
+    </p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // Modal
+  function openModal(mode) {
+    const modal = document.getElementById('modal');
+    const title = document.getElementById('modal-title');
+    const sub = document.getElementById('modal-sub');
+    const nameField = document.getElementById('name-field');
+    const cta = document.getElementById('modal-cta');
+    const sw = document.getElementById('modal-switch');
+
+    if (mode === 'signup') {
+      title.textContent = 'Buat akun';
+      sub.textContent = 'Mulai trial 2 hari gratis, tanpa kartu kredit.';
+      nameField.style.display = 'block';
+      cta.textContent = 'Buat akun gratis';
+      sw.innerHTML = 'Sudah punya akun? <a href="#" onclick="openModal(\'login\');return false;">Masuk</a>';
+    } else {
+      title.textContent = 'Masuk';
+      sub.textContent = 'Selamat datang kembali di DisPost.';
+      nameField.style.display = 'none';
+      cta.textContent = 'Masuk';
+      sw.innerHTML = 'Belum punya akun? <a href="#" onclick="openModal(\'signup\');return false;">Coba gratis</a>';
+    }
+    modal.classList.add('show');
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('show');
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    closeModal();
+    showToast('✓ Demo: autentikasi berhasil disimulasikan');
+  }
+
+  // Toast
+  let toastTimer;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  // Mobile menu (simple toggle)
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = '';
+    } else {
+      links.style.display = 'flex';
+      links.style.position = 'absolute';
+      links.style.top = '68px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.flexDirection = 'column';
+      links.style.background = 'var(--bg-2)';
+      links.style.padding = '20px';
+      links.style.borderBottom = '1px solid var(--border)';
+      links.style.gap = '16px';
+      links.style.zIndex = '99';
+    }
+  }
+
+  // Close modals with ESC
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Init
+  window.addEventListener('load', () => {
+    // subtle reveal
+    document.querySelectorAll('section').forEach(s => {
+      s.style.opacity = '0';
+      s.style.transform = 'translateY(20px)';
+      s.style.transition = 'opacity .6s ease, transform .6s ease';
+    });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'none';
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(s => io.observe(s));
+  });
+</script>
+</body>
+      </html>
