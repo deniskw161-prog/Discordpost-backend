@@ -13,7 +13,9 @@ mongoose.connect(MONGO_URI)
   .then(() => console.log('✅ MongoDB Terhubung'))
   .catch(err => console.error('❌ Gagal:', err.message));
 
-app.get('/', (req, res) => res.json({ status: 'OK', pesan: 'DisPost Backend aktif 🚀' }));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 
 // ... (route /api/users dan /api/schedules Anda bisa salin dari sebelumnya) ...
 
